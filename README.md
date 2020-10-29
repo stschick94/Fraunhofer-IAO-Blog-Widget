@@ -6,11 +6,11 @@ An iOS Widget to display the latest [Fraunhofer IAO Blog](https://blog.iao.fraun
 
 ## Installation
 1. Download [Scriptable](https://apps.apple.com/de/app/scriptable/id1405459188)
-2. Press the "+" to add a new Script
-3. Copy complete code into Script
+2. Open the App and press the "+" to add a new Script
+3. Copy [code](https://raw.githubusercontent.com/stschick94/Fraunhofer-IAO-Blog-Widget/main/IAO-Blog-Widget.js) into the new Script and give it a name in the settings (bottom-left-corner)
 4. Go to your homescreen and hold it pressed until you enter the "wiggle-mode"
 5. Press the "+" in the top-right-corner to add a new widget
-6. Select Scripatble and the size of your choice
+6. Select Scripatble and the size of your choice (recommended "medium" or "large")
 7. Now press the widget on the homescreen to configure it
 8. Select the previously added Script and set "When interacting" to "Run Script"
    This is important to make the link to new Blogposts work.
