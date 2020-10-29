@@ -12,8 +12,9 @@ An iOS Widget to display the latest [Fraunhofer IAO Blog](https://blog.iao.fraun
 5. Press the "+" in the top-right-corner to add a new widget
 6. Scroll down to the list and select "Scripatble" and the size of your choice (recommended "medium" or "large").
 <img src="https://github.com/stschick94/Fraunhofer-IAO-Blog-Widget/blob/main/Screenshots/Screenshot_Selection.jpg?raw=true" width="20%"/>
+
 7. Now press the widget on the homescreen to configure it
-8. Select the previously added Script
+8. Select the previously added Script and press the home-button to finish
 
    <img src="https://github.com/stschick94/Fraunhofer-IAO-Blog-Widget/blob/main/Screenshots/Screenshot_Config.jpg?raw=true" width="20%"/>
 
