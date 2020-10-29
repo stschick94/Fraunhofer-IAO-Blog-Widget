@@ -17,7 +17,7 @@ xmlParser.didStartElement = name => {
   currentValue = ""
   if (name == "item") {
     currentItem = {}
-    currentItem["categorys"] = []
+    currentItem["categories"] = []
   }
 }
 
@@ -42,7 +42,7 @@ xmlParser.didEndElement = name => {
   }
   
   if (hasItem && name == "category") {
-    currentItem["categorys"].push(currentValue)
+    currentItem["categories"].push(currentValue)
   }
   
   if (name == "item") {
@@ -65,8 +65,7 @@ function createWidget() {
   const detailFontSize = 12
   
   xmlParser.parse()
-  Safari.open(items[0].link)
-  
+
   if (config.widgetFamily == "medium"){
 // Medium Widget
 // row1 col1
@@ -82,6 +81,7 @@ function createWidget() {
     dataColumn.centerAlignContent()
     
     let staticTitle = dataColumn.addStack()
+    staticTitle.url = "https://blog.iao.fraunhofer.de/"
     staticTitle.addSpacer(5)
     let staticTitleTxt = staticTitle.addText("Fraunhofer IAO Blog")
     staticTitleTxt.font = Font.boldRoundedSystemFont(titleFontSize)
@@ -100,6 +100,7 @@ widget.addSpacer(10)
 // row2
     let row2 = widget.addStack()
     let title = row2.addStack()
+    title.url = items[0].link
     title.layoutHorizontally()
     let titleTxt = title.addText(items[0].title)
     titleTxt.font = Font.boldRoundedSystemFont(titleFontSize)
@@ -119,6 +120,7 @@ widget.addSpacer(10)
     dataColumn.centerAlignContent()
     
     let staticTitle = dataColumn.addStack()
+    staticTitle.url = "https://blog.iao.fraunhofer.de/"
     staticTitle.addSpacer(5)
     let staticTitleTxt = staticTitle.addText("Fraunhofer IAO Blog")
     staticTitleTxt.font = Font.boldRoundedSystemFont(titleFontSize)
@@ -137,6 +139,7 @@ widget.addSpacer(10)
 // row2
     let row2 = widget.addStack()
     let title = row2.addStack()
+    title.url = items[0].link
     title.layoutHorizontally()
     let titleTxt = title.addText(items[0].title)
     titleTxt.font = Font.boldRoundedSystemFont(titleFontSize)
@@ -145,25 +148,26 @@ widget.addSpacer(10)
 // row3
     let row3 = widget.addStack()
     let description = row3.addStack()
+    description.url = items[0].link
     description.layoutHorizontally()
     let descriptionTxt = description.addText(items[0].description)
     descriptionTxt.font = Font.mediumRoundedSystemFont(detailFontSize)
     widget.addSpacer()
     
 // row4
-// join categorys to one string
-    let categorysString = ""
-    for (var i = 0; i < items[0].categorys.length; i++){
+// join categories to one string
+    let categoriesString = ""
+    for (var i = 0; i < items[0].categories.length; i++){
      
       i != 0 ? 
-      (categorysString += ", ") : null
-      categorysString += items[0].categorys[i]
+      (categoriesString += ", ") : null
+      categoriesString += items[0].categories[i]
   }
     
     let row4 = widget.addStack()
-    let categorys = row4.addStack()
-    categorys.layoutHorizontally()
-    let categoryTxt = categorys.addText(categorysString)
+    let categories = row4.addStack()
+    categories.layoutHorizontally()
+    let categoryTxt = categories.addText(categoriesString)
     categoryTxt.font = Font.boldRoundedSystemFont(detailFontSize)
     
     
@@ -177,6 +181,7 @@ widget.addSpacer(10)
     
     let row2 = widget.addStack()
     let title = row2.addStack()
+    widget.url = items[0].link
     let titleTxt = title.addText(items[0].title)
     titleTxt.font = Font.boldRoundedSystemFont(13)
   }
